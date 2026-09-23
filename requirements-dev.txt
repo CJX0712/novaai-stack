@@ -4,5 +4,5 @@
 # 版本为参考锁版；不同平台 wheel 可用性以实际 PyPI 为准。
 fastembed>=0.3.5
 faiss-cpu>=1.8.0
-flagembedding>=1.3.0
+flagembedding>=1.4.2
 pypdf>=4.3.1
