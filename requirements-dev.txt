@@ -2,7 +2,7 @@
 #
 # 启用生产后端（NOVAAI_BACKEND=full / NOVAAI_LLM=ollama）时安装。
 # 版本为参考锁版；不同平台 wheel 可用性以实际 PyPI 为准。
-fastembed>=0.3.5
+fastembed>=0.8.0
 faiss-cpu>=1.8.0
 flagembedding>=1.3.0
 pypdf>=4.3.1
