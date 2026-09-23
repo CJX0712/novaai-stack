@@ -1,0 +1,57 @@
+{
+  "stages": [
+    {
+      "stage": "P0 字符门禁(emoji扫描)",
+      "pass": true,
+      "detail": {
+        "findings": 0
+      }
+    },
+    {
+      "stage": "模块导入",
+      "pass": true,
+      "detail": {
+        "imports": "all ok"
+      }
+    },
+    {
+      "stage": "单元测试",
+      "pass": true,
+      "detail": {
+        "total": 39,
+        "passed": 39,
+        "failed": 0
+      }
+    },
+    {
+      "stage": "HTTP E2E",
+      "pass": true,
+      "detail": {
+        "health": 200,
+        "ingest": 200,
+        "query": 200
+      }
+    },
+    {
+      "stage": "评分卡门限",
+      "pass": true,
+      "detail": {
+        "doc_hit_rate": 1.0,
+        "grounded_rate": 1.0,
+        "retrieval_cases": 5
+      }
+    },
+    {
+      "stage": "运行时不变式",
+      "pass": true,
+      "detail": {
+        "reingest_chunk_eq_1": true,
+        "deterministic_answer": true
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "stages_total": 6
+  }
+}

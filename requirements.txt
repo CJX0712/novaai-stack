@@ -1,0 +1,6 @@
+# NovaAI Stack — 核心运行依赖
+#
+# 核心运行【零第三方依赖】，仅需 Python 3.10+ 标准库。
+# 因此本文件为空：干净环境 git clone 后无需 pip install 即可运行与复现。
+#
+# 生产可选依赖（按需）见 requirements-dev.txt。

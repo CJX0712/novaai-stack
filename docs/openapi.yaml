@@ -1,0 +1,102 @@
+openapi: 3.0.3
+info:
+  title: NovaAI Stack API
+  version: 1.0.0
+  description: >
+    模块化检索增强推理系统的 HTTP 接口。默认由 Python 标准库 http.server 提供，
+    亦可由 FastAPI 适配器等价暴露。作者：晨星。
+servers:
+  - url: http://127.0.0.1:8000
+paths:
+  /health:
+    get:
+      summary: 健康检查
+      operationId: health
+      responses:
+        '200':
+          description: 服务正常
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+                  service: { type: string, example: novaai }
+                  docs: { type: integer, example: 3 }
+  /ingest:
+    post:
+      summary: 摄入文档
+      operationId: ingest
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: object
+                  properties:
+                    path: { type: string, description: 本地 txt/md/pdf 文件路径 }
+                - type: object
+                  properties:
+                    doc_id: { type: string }
+                    title: { type: string }
+                    text: { type: string }
+      responses:
+        '200':
+          description: 摄入成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  doc_id: { type: string }
+                  chunk_count: { type: integer }
+                  status: { type: string, example: ok }
+        '400':
+          description: 参数错误
+  /query:
+    post:
+      summary: 问答
+      operationId: query
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [query]
+              properties:
+                query: { type: string }
+      responses:
+        '200':
+          description: 问答结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  query: { type: string }
+                  answer: { type: string }
+                  grounded: { type: boolean }
+                  tool_calls:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        tool: { type: string }
+                        input: { type: string }
+                        output: { type: string }
+                  trace:
+                    type: array
+                    items: { type: string }
+                  contexts:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        chunk_id: { type: string }
+                        title: { type: string }
+                        score: { type: number }
+                        text: { type: string }
+        '400':
+          description: 缺少 query

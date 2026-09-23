@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "novaai-stack"
+version = "1.0.0"
+description = "模块化检索增强推理系统（零依赖、可复现、可发布）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "晨星" }]
+keywords = ["rag", "ai", "agent", "retrieval-augmented-generation"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
