@@ -1,5 +1,12 @@
 # NovaAI Stack
 
+<p align="center">
+  <a href="https://github.com/CJX0712/novaai-stack-m3iz/actions/workflows/ci.yml"><img src="https://github.com/CJX0712/novaai-stack-m3iz/actions/workflows/ci.yml/badge.svg" alt="ci"></a>
+  <a href="https://github.com/CJX0712/novaai-stack-m3iz/releases"><img src="https://img.shields.io/github/v/release/CJX0712/novaai-stack-m3iz?sort=semver" alt="release"></a>
+  <a href="https://github.com/CJX0712/novaai-stack-m3iz/blob/main/LICENSE"><img src="https://img.shields.io/github/license/CJX0712/novaai-stack-m3iz" alt="license"></a>
+  <img src="https://img.shields.io/badge/author-%E6%99%A8%E6%98%9F-1f6feb" alt="author">
+</p>
+
 > 模块化检索增强推理（RAG + ReAct Agent）系统 —— 默认零依赖，一键可复现。
 
 - **作者**：晨星
